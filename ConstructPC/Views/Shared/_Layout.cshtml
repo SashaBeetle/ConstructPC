@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Term Paper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="dropbtn">Комплектуючі</button>
+                                <div class="dropdown-content">
+                                    <a href="/Mothers/List">Материнські плати</a>
+                                    <a href="/Processors/ListProcessors">Процесори</a>
+                                    <a href="/GPUs/GPUsList">Відеокарти</a>
+                                    <a href="/RAMMemorys/RAMMemorysList">Оперативна Пам'ять</a>
+                                    <a href="/Coolings/CoolingsList">Кулера та Помпи</a>
+                                    <a href="/BlockPs/BlockPsList">Блоки Живлення</a>
+                                    <a href="/DriveMemorys/DriveMemorysList">Внутрішні Накопичувачі</a>
+                                    <a href="/CasesBox/CasesBoxList">Корпуси</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item" id="build">
+                            <a class="nav-link" href="/PCBuilder/">Конструктор</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="container">
+        <p>2022 Всі права захищенні · <a href="#">Угода</a></p>
+    </footer>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

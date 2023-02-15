@@ -1,0 +1,48 @@
+﻿<div id="myCarousel" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-pc" src="~/img/MotherAva.jpg" style="width:100%;"/>
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>@Model.motherCategory</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row mt-5 mb-2">
+
+    @{
+      
+
+        foreach (Motherboard mother in Model.amdmothers)
+        {
+
+            <div id="box1" class="box" style="width: 300px">
+                <img id="imagen" class="displayed" src="@mother.img" style="max-width:200px; display:block; margin: 0px auto" />
+                <h4>@mother.name</h4>
+                <h5>@mother.producer  <font size="3">@mother.socket</font></h5>
+                <h6>Максимально ОЗП: @mother.memory</h6>
+                <h6>Підтримувана ОЗП: @mother.typeMemory</h6>
+                @{string res;
+                    if (mother.SlotM2 == true)
+                    {
+                        res = "Присутній";
+                    }
+                    else res = "Відсутній";
+                }
+                <h6>Роз'єм для M2: @res </h6>
+                <h6>Формфактор: @mother.formfactor </h6>
+                <p><a class="btn btn-warning" href="#">Добавити</a></p>
+            </div>
+
+
+
+        }
+
+    }
+</div>
+

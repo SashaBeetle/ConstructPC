@@ -1,0 +1,35 @@
+﻿@Model CaseBox
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-pc" src="~/img/CaseAva.jpg" style="width:100%;" />
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>@Model.caseboxCategory</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rectr" id="d2"></div>
+<div class="row mt-5 mb-2">
+
+    @{
+        foreach (CaseBox box in Model.allcases)
+        {
+
+            <div id="box1" class="box" style="width: 300px">
+                <img id="imagen" class="displayed" src="@box.img" style="max-width:200px; display:block; margin: 0px auto" />
+                <h4>@box.name</h4>
+                <h5>Формфактор: @box.formfactor </h5>
+                <h5>Кількість вентиляротів: @box.fan_s</h5>
+                <p><a class="btn btn-warning" href="#">Добавити</a></p>
+            </div>
+
+
+
+        }
+
+    }
+</div>

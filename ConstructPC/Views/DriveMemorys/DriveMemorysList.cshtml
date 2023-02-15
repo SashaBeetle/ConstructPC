@@ -1,0 +1,48 @@
+﻿@Model DriveMemory
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-pc" src="~/img/DmemoryAva.jpg" style="width:100%;" />
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>@Model.dmemoryCategory</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rectr" id="d2"></div>
+<div class="row mt-5 mb-2">
+
+    @{
+        foreach (DriveMemory mem in Model.allDmemorys)
+        {
+            int res1;
+            string  val, res2;
+            if (mem.memory >= 1000)
+            {
+                val = "TБ";
+                res1 = mem.memory / 1000;
+            }
+            else { res1 = mem.memory; val = "GB"; }
+            if (mem.M2 == true)
+            {
+                res2 = "M2";
+            }
+            else res2 = "SATAIII";
+            <div id="box1" class="box" style="width: 300px">
+                <img id="imagen" class="displayed" src="@mem.img" style="max-width:200px; display:block; margin: 0px auto" />
+                <h4>@mem.model</h4>
+                <h5>Тип: @mem.type</h5>
+                <h5>Вмістимість: @res1 @val</h5>
+                <h5>Формфактор: @res2</h5>
+                <p><a class="btn btn-warning" href="#">Добавити</a></p>
+            </div>
+
+
+
+        }
+
+    }
+</div>

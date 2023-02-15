@@ -1,0 +1,35 @@
+﻿@Model GPU
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-pc" src="~/img/GPUAva.jpg" style="width:100%;" />
+            <div class="container">
+                <div class="carousel-caption text-center">
+                    <h1>@Model.gpuCategory</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rectr" id="d2"></div>
+<div class="row mt-5 mb-2">
+
+    @{
+        foreach (GPU gpu in Model.allgpus)
+        {
+
+        <div id="box1" class="box" style="width: 300px">
+            <img id="imagen" class="displayed" src="@gpu.img" style="max-width:200px; display:block; margin: 0px auto" />
+            <h4>@gpu.producer</h4>
+            <h5>@gpu.model     @gpu.memory Gb</h5>
+            <h6>Енергоспоживання: @gpu.voltage W</h6>
+            <p id="buttona"><a  class="btn btn-warning" href="#">Добавити</a></p>
+        </div>
+
+
+
+        }
+
+    }
+</div>

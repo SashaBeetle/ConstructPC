@@ -1,0 +1,35 @@
+﻿@Model BlockP
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-pc" src="~/img/supplyAva.jpg" style="width:100%;" />
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>@Model.blockpCategory</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rectr" id="d2"></div>
+<div class="row mt-5 mb-2">
+
+    @{
+        foreach (BlockP block in Model.allblockPs)
+        {
+
+        <div id="box1" class="box" style="width: 300px">
+            <img id="imagen" class="displayed" src="@block.img" style="max-width:200px; display:block; margin: 0px auto" />
+            <h4>@block.name</h4>
+            <h5>Потужність: @block.power W </h5>
+            <h5>Тип захисту: @block.Protecttype</h5>
+            <p id="buttona"><a class="btn btn-warning" href="#">Добавити</a></p>
+        </div>
+
+
+
+        }
+
+    }
+</div>
